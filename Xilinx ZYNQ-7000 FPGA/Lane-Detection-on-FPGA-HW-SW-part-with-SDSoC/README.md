@@ -5,9 +5,9 @@ This project realized in C++ using with OpenCV and xfOpenCV Libraries. <br />
 
 ### Project
 1-) [Lane Detection with implementation on FPGA] <br />
-2-) **C++ with OpenCV on just CPU without any acceleration with FPGA:** [Lane Detection on CPU Pure Software] <br />
-**3.1-)** :heavy_check_mark::heavy_check_mark: **C++ with OpenCV on Arm processor and xfopencv on Hardware in Zynq-7000 series FPGA's, all steps of algorithms** Lane Detection on FPGA-HW/SW part with SDSoC <br />
-3.2-) **Verilog on hardware, only preprocess step:**  [Lane Detection on FPGA-HW part with VIVADO] <br />
+2-) **C++ with OpenCV on just CPU without any acceleration with FPGA** [Lane Detection on CPU Pure Software] <br />
+**3.1-)** :heavy_check_mark::heavy_check_mark: **C++ with OpenCV on Arm processor and xfopencv on Hardware in Zynq-7000 series FPGA's, all steps of algorithms**: Lane Detection on FPGA-HW/SW part with SDSoC <br />
+3.2-) **Verilog on hardware, only preprocess step**  [Lane Detection on FPGA-HW part with VIVADO] <br />
 
 ## TODO
 - Add project settings files <br />
