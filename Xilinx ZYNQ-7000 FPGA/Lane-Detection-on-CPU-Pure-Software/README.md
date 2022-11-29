@@ -1,5 +1,5 @@
 # Lane Detection on CPU Pure Software
-UDACITY Self Driving Car Advance Lane Detection project based Lane Detection Algorithms on C++. <br />
+Self Driving Car Advance Lane Detection project based Lane Detection Algorithms on C++. <br />
 
 This project realized in C++ and OpenCV Library.<br />
 

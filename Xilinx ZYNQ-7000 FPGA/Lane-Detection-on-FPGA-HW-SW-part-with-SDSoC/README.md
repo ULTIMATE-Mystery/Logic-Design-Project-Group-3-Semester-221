@@ -15,7 +15,7 @@ This project realized in C++ using with OpenCV and xfOpenCV Libraries. <br />
 
 ## Lane Detection on FPGA-SW part with SDSoC
 ### *Dependencies*
-- Xilinx SDx Development Environments (tested version 2018.1 ) <br />
-- OpenCV 2.4 (tested at windows platform __(builded for windows)__ ) <br />
+- Xilinx SDx Development Environments (tested version 2018.1) <br />
+- OpenCV 2.4 (tested at windows platform __(builded for windows)__) <br />
 - OpenCV 2.4 for ARM processor  (tested on Zedboard __(builded for ARCH32 architecture)__) <br />
 - Xilinx xfOpenCV Library <br />
