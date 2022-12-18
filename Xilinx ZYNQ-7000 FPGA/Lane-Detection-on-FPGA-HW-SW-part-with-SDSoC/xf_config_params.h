@@ -1,9 +1,8 @@
 //
 //  xf_config_params.h
-//  Advance_Lane_Detection
+//  Lane_Detection
 //
-//  Created by Yakup Gorur on 2/10/17.
-//  Copyright © 2018 Yakup Gorur. All rights reserved.
+
 
 /* Optimization type */
 

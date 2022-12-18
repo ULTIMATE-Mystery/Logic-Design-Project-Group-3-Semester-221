@@ -1,9 +1,7 @@
 //
 //  TimeAnalyze.hpp
-//  Advance_Lane_Detection_640_480
+//  Lane_Detection_640_480
 //
-//  Created by Yakup Gorur on 3/7/18.
-//  Copyright © 2018 Yakup Gorur. All rights reserved.
 //
 
 #ifndef TimeAnalyze_hpp
