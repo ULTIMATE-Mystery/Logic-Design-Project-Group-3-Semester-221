@@ -2,9 +2,6 @@
 //  Lane.cpp
 //  Lane_Detection(local)
 //
-//  Created by Yakup Görür on 08/08/2017.
-//  Copyright © 2017. All rights reserved.
-//
 
 #include "Lane.hpp"
 
@@ -40,7 +37,7 @@ int Lane::GetXValue(float* fit, int col){
 
 bool Lane::CheckIsItLane(float *left, float *right){
 
-    int XINTERVAL = 60; //floating of line rigt-left (Line sağa sola kayması)
+    int XINTERVAL = 60; //floating of line right-left 
 
     int l_lane_x[3], r_lane_x[3];
     l_lane_x[0] = GetXValue(left,  y_size);
@@ -88,7 +85,7 @@ bool Lane::CheckIsItLane(float *left, float *right){
     diff_r[1] = abs(r_lane_x[1]- right_lane_x_indis_recent[buffer_lane_x_r][1]);
     diff_r[2] = abs(r_lane_x[2]- right_lane_x_indis_recent[buffer_lane_x_r][2]);
 
-    //left ne kadar oynamış? right nekadar oynamış?
+    
     for(int i=1; i<3; i++){
         if(diff_l[i]>maxl){
             maxl = diff_l[i];
@@ -108,42 +105,15 @@ bool Lane::CheckIsItLane(float *left, float *right){
     }
 
 
-/* TODO Is it Lane
-     
-    //Conditions:
-    //Gürültüden bozulmayı azaltır bu condition.
-    //Right X_index aynı değermi?
-    if(maxr < XINTERVAL){ //AYNI
 
-        //Left X_index aynı değermi?
-        if (maxl < XINTERVAL) { // Aynı [1,1]
-            //Recente ekle ikisinide. //recente ekleme burada henüz olmuyor. Ama addcoefficient'da oluyor
-        } else { //Aynı Değil [1,0]
-            //Left'i Recent'ten çek. Right'ı ekle. //recente ekleme burada henüz olmuyor. Ama addcoefficient'da oluyor
-            left= coefficient_left_recent[buffer_coefficient];
-        }
-    }
-    else{   //AYNI DEĞİL
-        //Left X_index aynı değermi?
-        if (maxl < XINTERVAL) { // Aynı [0,1]
-            //Right'i Recent'ten çek. Left'i ekle.
-            right=coefficient_right_recent[buffer_coefficient];
-        } else { //Aynı Değil [0,0]
-            //Birşey yapma next condition yapar zaten.
-        }
 
-    }
+
     
-*/
-
-
-
-    //Lane genişliği uygun mu?
-    if ( ( (maxb-minb) > 350) || (minb < 200) || (maxb > 975) ) { //değil
-        //Eski iki değeri al yada başarız
+    if ( ( (maxb-minb) > 350) || (minb < 200) || (maxb > 975) ) { 
+        
         return false;
     } else {
-        //süper. Şerit Değişikliğini kontrol ettin mi? Bir sonraki condition.//TODO
+        
         return true;
     }
 
@@ -189,11 +159,11 @@ void Lane::AddCoefficent(float *left, float *right){
 
 
         //Average calculation
-        //( (average*10) - SonDeğer + YeniDeğer ) /10
+        
         if(coefficient_right_recent [buffer_coefficient] != NULL){
-            //Right yeni değer
+            
             float *Dright= coefficient_right_recent [buffer_coefficient];
-            //Left yeni değer
+            
             float *Dleft= coefficient_left_recent [buffer_coefficient];
 
 
@@ -208,8 +178,8 @@ void Lane::AddCoefficent(float *left, float *right){
             ;
 
         }
-        //just for first "buffer" time (Daha ilk circle dolmadan)
-        // ((ilkdeğer * buffer) + yeni değer ) / (buffer+1)
+        //just for first "buffer" time 
+        
         else{
             coefficient_left_average[0]  = ( (coefficient_left_average[0]*buffer_coefficient ) + coefficient_left_recent_Mem_allocate[0]  ) / (buffer_coefficient +1);
             coefficient_left_average[1]  = ( (coefficient_left_average[1]*buffer_coefficient ) + coefficient_left_recent_Mem_allocate[1]  ) / (buffer_coefficient +1);
@@ -229,7 +199,7 @@ void Lane::AddCoefficent(float *left, float *right){
         detected_left=true;
         detected_right=true;
 
-//        //hiç girmiyor.
+//        
 //        if(!(CheckIsItLane(coefficient_left_average, coefficient_right_average) )){
 //            coefficient_right_average[2]=0;
 //            coefficient_right_average[1]=0;
@@ -250,7 +220,7 @@ void Lane::AddCoefficent(float *left, float *right){
         coefficient_right_current[1] = coefficient_right_average[1];
         coefficient_right_current[2] = coefficient_right_average[2];
 
-        //Hiç girmiyor.
+        
         if(!(CheckIsItLane(coefficient_left_average, coefficient_right_average) )){
             coefficient_left_current[0]=0;
             coefficient_left_current[1]=0;
@@ -270,9 +240,7 @@ void Lane::AddCoefficent(float *left, float *right){
 }
 
 
-//Ekleme yapmayacak. CheckIsItLane() true ve false gelsede bu fonksiyona giriliyor.
-//False geldiği durumda _recent değerlere ekleme yapmaması lazım.
-//şuanda yapılan eklemeler kullanılmadığı için sorun yok.
+
 void Lane::CalculateLineDistances(float* left, float* right){
 
 

@@ -7,8 +7,6 @@
 
 #include <stdio.h>
 
-//TODO: Eğri uyduramazsa bildirilmesi gerekiyor.
-
 using namespace std;
 
 float ** Inverse_Matrix(float **Matrix, int row=3, int col=3){

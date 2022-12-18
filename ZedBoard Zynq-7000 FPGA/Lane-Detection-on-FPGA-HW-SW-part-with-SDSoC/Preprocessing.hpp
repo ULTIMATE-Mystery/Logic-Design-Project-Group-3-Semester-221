@@ -2,8 +2,6 @@
 //  Preprocessing.hpp
 //  Filter-Noise
 //
-//  Created by Yakup Görür on 31/07/2017.
-//  Copyright © 2017 Yakup Görür. All rights reserved.
 //
 
 #ifndef Preprocessing_hpp

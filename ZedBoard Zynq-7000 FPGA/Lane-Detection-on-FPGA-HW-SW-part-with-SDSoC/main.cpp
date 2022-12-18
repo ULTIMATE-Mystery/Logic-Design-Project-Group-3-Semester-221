@@ -1,10 +1,8 @@
 //
 //  main.cpp
-//  Advance_Lane_Detection
+//  Lane_Detection
 //
-//  Created by Yakup Gorur on 2/10/17.
-//  Copyright © 2017 Yakup Gorur. All rights reserved.
-//
+
 #include <stdio.h>
 #include <iostream>
 #include <time.h>
@@ -88,7 +86,7 @@ int main(int argc, const char * argv[]) {
     Minv = getPerspectiveTransform(dst, src);
     
     // Path an image file
-    //string u_path_image = "/Users/yakup/Test_Input_Files/UD/frames/testimage.png";
+    //string u_path_image = "/Users/Quang/Test_Input_Files/UD/frames/testimage.png";
     
     // Path a video file
     string u_path_video = "testvideo640480.mp4";
@@ -433,7 +431,7 @@ void SlidingWindow(cv::Mat binary_warped){
     //        //        mylanes.detected_right=true;
     //
     //        //adding the coefficients
-    //        mylanes.AddCoefficent(left_fit, right_fit); //yanlışyerde
+    //        mylanes.AddCoefficent(left_fit, right_fit); 
     //    }
     //    else{
     //        // Use previoius line coefficients.
