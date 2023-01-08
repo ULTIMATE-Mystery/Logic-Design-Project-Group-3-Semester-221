@@ -1,1 +1,1 @@
-# Source code demo bảo vệ đồ án môn học
+# Sobel Edge Detection simulation and implementation on FPGA
