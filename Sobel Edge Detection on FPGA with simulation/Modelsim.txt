@@ -1,0 +1,3 @@
+vlog hdl/*.v
+vsim -c -novopt Top
+run 10ms
